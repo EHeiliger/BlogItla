@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BlogItla.Models.Post>
+@{
+    ViewData["Title"] = "Wall";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                @foreach (var post in Model)
+                {
+                
+                    <div class="post-preview">
+                        <a href="">
+                            <h2 class="post-title">
+                                @post.Title
+                            </h2>
+                            <h3 class="post-subtitle">
+                                @post.SubTitle
+                            </h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by @User.Identity.Name
+                            <a href=""></a>
+                            on @post.PostDate
+                        </p>
+                    </div>
+                }
+                <hr>
+            </div>
+        </div>
+    </div>
